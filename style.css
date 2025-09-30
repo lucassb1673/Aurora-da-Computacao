@@ -1,80 +1,133 @@
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    background-color: #1D1B1B;
-}
-header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 121px;
-  background-color: #282525;
-}
-.logo{
-}
-.menu{
-    position: absolute;
-    left: 20px; 
-    align-items: center;
-    border: none;
-    background: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.divJornada {
+body {
+  background-color: #1D1B1B;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.header {
+  height: 121px;
+  background-color: #282525;
   position: relative;
-  height: 847px;
+  padding: 0 1rem;
+}
+
+.menu img {
+  max-width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+
+.logo {
+  max-width: 250px;
+  height: auto;
+}
+
+/* Ajuste de posicionamento do botão menu e logo */
+@media (max-width: 768px) {
+  .menu img {
+    max-width: 30px;
+  }
+
+  .logo {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu img {
+    max-width: 25px;
+  }
+
+  .logo {
+    max-width: 90px;
+  }
+}
+
+/* Seção jornada */
+.jornada {
+  position: relative;
   background-image: url('./Assets/images/velho.png');
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  align-items: center;    
-  padding: 0 20px;         
-  color: white;           
-  text-align: center;
+  background-size: cover;
+  min-height: 700px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
+/* Conteúdo da jornada fica acima do overlay */
+.conteudo-jornada {
+  position: relative;
+  z-index: 2;
+}
 
-.divJornada h2{
-color: #FFFDFA;
-width: 817px;
-text-align: center;
-font-family: "Josefin Sans";
-font-size: 48px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: 1.44px;
-}
-.divJornada p{
-color: #FFF;
-text-align: center;
-font-family: Poppins;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 0.48px;
-}
-.divJornada button{
-display: inline-flex;
-position: absolute;
-padding: 7px 20px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-border-radius: 20px;
-border: 1px solid #FFF;
-margin-top:26%;
-background: transparent;
-color: #FFF;
-}
-.divJornada h3{
-position: absolute;
-margin-top:35%;
+/* Títulos e texto - já definidos pelo bootstrap, mas pode ajustar aqui */
+.jornada h2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  letter-spacing: 1.44px;
+  margin-top:24rem;
 
+}
+
+.jornada p {
+  font-size: 1.1rem;
+  letter-spacing: 0.48px;
+  margin-bottom: 2rem;
+}
+
+/* Ajuste de responsividade do texto na jornada */
+@media (max-width: 768px) {
+  .jornada h2 {
+    font-size: 1.8rem;
+  }
+
+  .jornada p {
+    font-size: 1rem;
+  }
+}
+
+/* Ajustes para imagens nas seções */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Outras seções */
+.temas div,
+.eras {
+  color: white;
+}
+
+.bg-tema {
+  background-color: #2a2a2a;
+}
+
+/* Responsividade extra para header elementos alinhados */
+@media (max-width: 576px) {
+  .header {
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Faz o botão menu ficar no canto esquerdo, logo alinhado à direita */
+  .header .menu {
+    position: relative;
+    left: 0;
+  }
+
+  /* Alinha o logo à direita */
+  .header .logo {
+    max-width: 100px;
+  }
 }

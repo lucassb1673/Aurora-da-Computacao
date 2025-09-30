@@ -1,62 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./Assets/images/logo.svg" type="image/svg">gi
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Seu CSS -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <link rel="icon" href="./Assets/images/logo.svg" type="image/svg+xml" />
 </head>
 <body>
-    <header>
-        <button class="menu">
-            <img src="./Assets/images/logoMenu.svg" alt="">
-        </button>
-        <img src="./Assets/images/logo.svg" alt="" class="logo">
-        
-       
-    
-    </header>
-    <main>
-        <section class="jornada">
-            <div class="divJornada">
-                
-                    <h2>A JORNADA DOS PRIMEIROS COMPUTADORES</h2>
-                    <p>De 1936 a 1950, uma revolução silenciosa começou a transformar
-                    o mundo: da Máquina de Turing ao ENIAC, da teoria à prática, da ideia à inovação.</p>
-                            <button>
-                                <h5>EXPLORAR MAIS</h5>
-                            </button>
-                            <h3>VEJA MAIS</h3>
-                            
-            </div>
-           
-        </section>
-        
-        <section>
-            <h1>ERAS</h1>
-            <hr>
-            <img src="./Assets/images/asprimeirasideias(1936–1939).png" alt="">
-        </section>
 
-        <section>
-            <h1>TEMAS</h1>
-            <hr>
-            <div>
-                <img src="./Assets/images/maquinaTuring.png" alt="">
-                <h3>Fundamentos Teóricos e Conceituais</h3>
-                <p>Antes do primeiro chip ou circuito, existia a ideia. Explore os modelos teóricos e os conceitos matemáticos que formam o DNA de toda a computação moderna, desde a visionária Máquina de Turing até a arquitetura que define seu computador hoje.</p>
-                <button>VEJA MAIS</button>
-            </div>
-            <div>
-                <img src="" alt="">
-                <h3>A Era Eletromecânica: Relés e Engrenagens</h3>
-                <p>Com o som de relés e engrenagens, nasceram as primeiras máquinas de calcular programáveis. Conheça os gigantes eletromecânicos, como o Z3 e o Harvard Mark I, que transformaram a lógica abstrata em realidade física e deram os primeiros passos na automação.</p>
-                <button>VEJA MAIS</button>
-            </div>
-        </section>
+  <header class="header d-flex align-items-center justify-content-center position-relative">
+    <button class="btn btn-link position-absolute start-0 ms-3 menu" aria-label="Menu">
+      <img src="./Assets/images/logoMenu.svg" alt="Menu" />
+    </button>
+    <img src="./Assets/images/logo.svg" alt="Logo" class="logo" />
+  </header>
 
-    </main>
+  <main class="container my-5">
+
+    <section class="jornada position-relative rounded overflow-hidden mb-5">
+      <div class="overlay"></div>
+      <div class="conteudo-jornada text-center text-white py-5 px-3">
+        <h2 class="mb-4">A JORNADA DOS PRIMEIROS COMPUTADORES</h2>
+        <p class="mb-4">
+          De 1936 a 1950, uma revolução silenciosa começou a transformar o mundo: da Máquina de Turing ao ENIAC, da teoria à prática, da ideia à inovação.
+        </p>
+        <button class="btn btn-outline-light btn-lg mb-4">EXPLORAR MAIS</button>
+        <h3>VEJA MAIS</h3>
+      </div>
+    </section>
+
+    <section class="eras mb-5">
+      <h1 class="mb-3">ERAS</h1>
+      <hr />
+      <img src="./Assets/images/asprimeirasideias(1936–1939).png" alt="As primeiras ideias (1936–1939)" class="img-fluid rounded" />
+    </section>
+
+    <section class="temas mb-5">
+      <h1 class="mb-3">TEMAS</h1>
+      <hr />
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="p-3 border rounded h-100 text-white bg-tema">
+            <img src="./Assets/images/maquinaTuring.png" alt="Fundamentos Teóricos e Conceituais" class="img-fluid mb-3 rounded" />
+            <h3>Fundamentos Teóricos e Conceituais</h3>
+            <p>
+              Antes do primeiro chip ou circuito, existia a ideia. Explore os modelos teóricos e os conceitos matemáticos que formam o DNA de toda a computação moderna, desde a visionária Máquina de Turing até a arquitetura que define seu computador hoje.
+            </p>
+            <button class="btn btn-outline-primary">VEJA MAIS</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 border rounded h-100 text-white bg-tema">
+            <img src="" alt="A Era Eletromecânica" class="img-fluid mb-3 rounded" />
+            <h3>A Era Eletromecânica: Relés e Engrenagens</h3>
+            <p>
+              Com o som de relés e engrenagens, nasceram as primeiras máquinas de calcular programáveis. Conheça os gigantes eletromecânicos, como o Z3 e o Harvard Mark I, que transformaram a lógica abstrata em realidade física e deram os primeiros passos na automação.
+            </p>
+            <button class="btn btn-outline-primary">VEJA MAIS</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
