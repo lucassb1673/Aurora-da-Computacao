@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #1D1B1B;
+}
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 121px;
+  background-color: #282525;
+}
+.logo{
+}
+.menu{
+    position: absolute;
+    left: 20px; 
+    align-items: center;
+    border: none;
+    background: none;
+}
+
+.divJornada {
+  position: relative;
+  height: 847px;
+  background-image: url('./Assets/images/velho.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;    
+  padding: 0 20px;         
+  color: white;           
+  text-align: center;
+}
+
+
+.divJornada h2{
+color: #FFFDFA;
+width: 817px;
+text-align: center;
+font-family: "Josefin Sans";
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 1.44px;
+}
+.divJornada p{
+color: #FFF;
+text-align: center;
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.48px;
+}
+.divJornada button{
+display: inline-flex;
+position: absolute;
+padding: 7px 20px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 20px;
+border: 1px solid #FFF;
+margin-top:26%;
+background: transparent;
+color: #FFF;
+}
+.divJornada h3{
+position: absolute;
+margin-top:35%;
+
+}
