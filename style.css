@@ -30,12 +30,11 @@ body {
   height: auto;
 }
 
-/* Ajuste de posicionamento do botão menu e logo */
+/* Ajustes responsivos do header */
 @media (max-width: 768px) {
   .menu img {
     max-width: 30px;
   }
-
   .logo {
     max-width: 120px;
   }
@@ -45,64 +44,81 @@ body {
   .menu img {
     max-width: 25px;
   }
-
   .logo {
     max-width: 90px;
   }
 }
 
-/* Seção jornada */
-.jornada {
-  position: relative;
-  background-image: url('./Assets/images/velho.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 700px;
-  border-radius: 8px;
-  overflow: hidden;
+@media (max-width: 576px) {
+  .header {
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .header .menu {
+    position: relative;
+    left: 0;
+  }
+  .header .logo {
+    max-width: 100px;
+  }
 }
 
-/* Conteúdo da jornada fica acima do overlay */
+/* Jornada */
+.jornada {
+  position: relative;
+  height: calc(100vh - 121px);
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Imagem de fundo */
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Conteúdo da jornada */
 .conteudo-jornada {
   position: relative;
   z-index: 2;
+  padding: 1rem;
 }
 
-/* Títulos e texto - já definidos pelo bootstrap, mas pode ajustar aqui */
 .jornada h2 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
   font-size: 2.5rem;
   letter-spacing: 1.44px;
-  margin-top:24rem;
-
+  color: white;
 }
 
 .jornada p {
   font-size: 1.1rem;
   letter-spacing: 0.48px;
-  margin-bottom: 2rem;
+  color: white;
 }
 
-/* Ajuste de responsividade do texto na jornada */
+/* Responsividade da jornada */
 @media (max-width: 768px) {
   .jornada h2 {
     font-size: 1.8rem;
   }
-
   .jornada p {
     font-size: 1rem;
   }
 }
 
-/* Ajustes para imagens nas seções */
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Outras seções */
+/* Seções ERAS e TEMAS */
 .temas div,
 .eras {
   color: white;
@@ -112,22 +128,7 @@ body {
   background-color: #2a2a2a;
 }
 
-/* Responsividade extra para header elementos alinhados */
-@media (max-width: 576px) {
-  .header {
-    justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  /* Faz o botão menu ficar no canto esquerdo, logo alinhado à direita */
-  .header .menu {
-    position: relative;
-    left: 0;
-  }
-
-  /* Alinha o logo à direita */
-  .header .logo {
-    max-width: 100px;
-  }
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
