@@ -1,4 +1,7 @@
-/* Reset básico */
+@font-face {
+  font-family:JosefinSans-SemiBold;
+  src: url('../Assets/fonts/JosefinSans-SemiBold.ttf');
+}
 * {
   margin: 0;
   padding: 0;
@@ -79,12 +82,13 @@ body {
 /* Imagem de fundo */
 .bg-img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+ 
+  
   z-index: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Conteúdo da jornada */
@@ -92,21 +96,31 @@ body {
   position: relative;
   z-index: 2;
   padding: 1rem;
+  text-align: center;
 }
-
+.conteudo-jornada button{
+  position: relative;   /* mantém dentro do container */
+  top: 13rem; 
+}
 .jornada h2 {
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 600;
+  font-family:'JosefinSans-SemiBold';
+  font-weight: 60;
   font-size: 2.5rem;
-  letter-spacing: 1.44px;
-  color: white;
+  letter-spacing: 2px;
+  color:#fffdfa;
 }
 
 .jornada p {
-  font-size: 1.1rem;
-  letter-spacing: 0.48px;
-  color: white;
+color: #FFF;
+text-align: center;
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 40;
+line-height: normal;
+letter-spacing: 0.48px;
 }
+
 
 /* Responsividade da jornada */
 @media (max-width: 768px) {
@@ -122,6 +136,7 @@ body {
 .temas div,
 .eras {
   color: white;
+  text-align: center;
 }
 
 .bg-tema {
@@ -132,3 +147,16 @@ body {
   max-width: 100%;
   height: auto;
 }
+.conteudo-jornada h3 {
+  margin-bottom:-10vh;      /* espaço entre o botão "EXPLORAR MAIS" e "VEJA MAIS" */
+  font-size: 1.5rem;    /* tamanho do texto */
+  font-weight: 600;
+  cursor: pointer;
+  color: #fffdfa;
+
+}
+
+
+
+
+
