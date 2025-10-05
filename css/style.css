@@ -134,10 +134,10 @@ body {
 .scroll-down {
   width: 0;
   height: 0;
-  margin: 1.5rem auto 0 auto; /* centraliza horizontalmente e dá espaço em cima */
+  margin: 1.5rem auto 0 auto;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 15px solid #fffdfa; /* seta apontando pra baixo */
+  border-top: 15px solid #fffdfa;
   animation: bounce 1.5s infinite;
 }
 
@@ -151,4 +151,195 @@ body {
   60% {
     transform: translateY(5px);
   }
+}
+
+.temas-section {
+  text-align: center;
+  padding: 60px 0;
+
+  color: white;
+}
+
+.titulo {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.linha-titulo {
+  width: 100px;
+  border: 1px solid white;
+  margin: 0 auto 40px;
+  opacity: 0.4;
+}
+
+/* --- Carrossel --- */
+.carousel-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 1800px;
+  margin: auto;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+/* Cada slide ocupa metade da largura da área visível menos metade do gap */
+.card-tema {
+  flex: 0 0 calc(50% - 10px); /* 2 slides por vez, espaçamento compensado */
+  background: none;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* imagem */
+.card-tema img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  filter: grayscale(40%);
+  transition: opacity 0.3s ease;
+}
+
+.card-tema:hover img {
+  opacity: 0.25;
+}
+
+/* TÍTULO NO TOPO DO CARD */
+.card-tema h3 {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  right: 25px;
+  font-size: 1rem;           /* título menor */
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+/* CONTEÚDO MAIS COMPACTO E ALINHADO */
+.card-tema p {
+  font-size: 0.75rem;        /* texto reduzido */
+  color: #ddd;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+/* AJUSTE NA ÁREA DE TEXTO (para respeitar o novo layout) */
+.card-tema .info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* mantém texto e botão na parte de baixo */
+  padding: 25px 30px;
+  text-align: left;
+}
+
+/* botão "veja mais" */
+.btn-veja {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: 700;
+  border-radius: 25px;
+  width: 180px;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-veja:hover {
+  background: white;
+  color: black;
+}
+
+/* --- Botões do carrossel --- */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: black;
+  border: none;
+  font-size: 26px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: all 0.3s;
+  z-index: 5;
+}
+
+.carousel-btn.prev {
+  left: -60px;
+}
+
+.carousel-btn.next {
+  right: -60px;
+}
+
+.carousel-btn:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* --- Dots --- */
+.carousel-dots {
+  margin-top: 25px;
+}
+
+.carousel-dots button {
+  background: #666;
+  border: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.carousel-dots button.active {
+  background: white;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 1200px) {
+  .card-tema {
+    width: 650px;
+    height: 370px;
+    flex: 0 0 650px;
+  }
+  .card-tema h3 { font-size: 1.3rem; }
+  .card-tema p { font-size: 0.85rem; }
+}
+
+@media (max-width: 800px) {
+  .carousel {
+    gap: 20px;
+  }
+  .card-tema {
+    width: 90vw;
+    height: calc(90vw * 0.56);
+    flex: 0 0 90vw;
+  }
+  .card-tema h3 { font-size: 1.1rem; }
+  .card-tema p { font-size: 0.8rem; }
+  .carousel-btn { display: none; }
 }

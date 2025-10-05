@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Landing Page</title>
 
+ <!-- Swiper CSS -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!--Swipe jS-->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css">
@@ -53,39 +58,216 @@
     </section>
 
     <!-- Seção Temas -->
-    <section class="temas mb-5">
-      <h1 class="mb-3">TEMAS</h1>
-      <hr />
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="p-3 border rounded h-100 text-white bg-tema">
-            <img src="./Assets/images/maquinaTuring.png" alt="Fundamentos Teóricos e Conceituais" class="img-fluid mb-3 rounded" />
-            <h3>Fundamentos Teóricos e Conceituais</h3>
+<section class="temas-section">
+  <h1 class="titulo">TEMAS</h1>
+  <hr class="linha-titulo" />
+
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <div class="carousel-container">
+      <div class="carousel">
+        <!-- 1 -->
+        <div class="card-tema">
+          <img src="./Assets/images/maquinaTuring.png" alt="Fundamentos Teóricos e Conceituais" />
+          <div class="info">
+            <h3>FUNDAMENTOS TEÓRICOS E CONCEITUAIS</h3>
             <p>
-              Antes do primeiro chip ou circuito, existia a ideia. Explore os modelos teóricos e os conceitos matemáticos que formam o DNA de toda a computação moderna, desde a visionária Máquina de Turing até a arquitetura que define seu computador hoje.
+              Antes do primeiro chip ou circuito, existia a ideia. Explore os modelos teóricos e os conceitos
+              matemáticos que formam o DNA de toda a computação moderna, desde a visionária Máquina de Turing até a
+              arquitetura que define seu computador hoje.
             </p>
-            <button class="btn btn-outline-primary">VEJA MAIS</button>
+            <button class="btn-veja">VEJA MAIS</button>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="p-3 border rounded h-100 text-white bg-tema">
-            <img src="" alt="A Era Eletromecânica" class="img-fluid mb-3 rounded" />
-            <h3>A Era Eletromecânica: Relés e Engrenagens</h3>
+
+        <!-- 2 -->
+        <div class="card-tema">
+          <img src="./Assets/images/AEraEletromecanica.png" alt="Era Eletromecânica" />
+          <div class="info">
+            <h3>A ERA ELETROMECÂNICA: RELÉS E ENGRENAGENS</h3>
             <p>
-              Com o som de relés e engrenagens, nasceram as primeiras máquinas de calcular programáveis. Conheça os gigantes eletromecânicos, como o Z3 e o Harvard Mark I, que transformaram a lógica abstrata em realidade física e deram os primeiros passos na automação.
+              Com o som de relés e engrenagens, nasceram as primeiras máquinas de calcular programáveis. Conheça os
+              gigantes eletromecânicos, como o Z3 e o Harvard Mark I, que transformaram a lógica abstrata em realidade
+              física.
             </p>
-            <button class="btn btn-outline-primary">VEJA MAIS</button>
+            <button class="btn-veja">VEJA MAIS</button>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card-tema">
+          <img src="./Assets/images/ComputacaoPAraFins" alt="Computação para Fins Específicos" />
+          <div class="info">
+            <h3>COMPUTAÇÃO PARA FINS ESPECÍFICOS: GUERRA E CIÊNCIA</h3>
+            <p>
+              Em meio a uma guerra de códigos e desafios científicos, a necessidade acelerou a inovação. Mergulhe na
+              história das máquinas criadas para uma única missão: decifrar o código Enigma com o Colossus, resolver
+              equações complexas e dar uma vantagem decisiva à ciência e aos Aliados.
+            </p>
+            <button class="btn-veja">VEJA MAIS</button>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card-tema">
+          <img src="./Assets/images/revEletro" alt="A Revolução Eletrônica" />
+          <div class="info">
+            <h3>A REVOLUÇÃO ELETRÔNICA: A ERA DAS VÁLVULAS</h3>
+            <p>
+              O barulho dos relés deu lugar ao brilho silencioso das válvulas. Veja como a troca da tecnologia mecânica
+              pela eletrônica representou um salto quântico em velocidade e poder, dando vida a "cérebros gigantes" como
+              o ENIAC e inaugurando a computação de alta velocidade.
+            </p>
+            <button class="btn-veja">VEJA MAIS</button>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card-tema">
+          <img src="./Assets/images/oNascimentoDoSoftwar.png" alt="Nascimento do Software" />
+          <div class="info">
+            <h3>O NASCIMENTO DO SOFTWARE E DO COMPUTADOR MODERNO</h3>
+            <p>
+              Este é o momento em que a máquina ganhou uma "memória". Descubra a invenção que separa as calculadoras dos
+              computadores modernos: o programa armazenado. Explore como o Manchester 'Baby' e o EDSAC aprenderam a
+              guardar e executar instruções, dando à luz o conceito de software.
+            </p>
+            <button class="btn-veja">VEJA MAIS</button>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card-tema">
+          <img src="./Assets/images/Tecnologias.png" alt="Tecnologias, Pessoas e Comunidade" />
+          <div class="info">
+            <h3>TECNOLOGIAS, PESSOAS E COMUNIDADE</h3>
+            <p>
+              Por trás de cada computador gigante, existem os componentes revolucionários e as mentes brilhantes que os
+              conceberam. Conheça as tecnologias fundamentais, como o transistor, e celebre os pioneiros e as
+              organizações que construíram a comunidade que impulsiona a computação até hoje.
+            </p>
+            <button class="btn-veja">VEJA MAIS</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
+  <div class="carousel-dots"></div>
+</section>
   </main>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+  
   <script>
+// Carrossel
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".carousel");
+  const dotsContainer = document.querySelector(".carousel-dots");
+  const cards = document.querySelectorAll(".card-tema");
+  const nextBtn = document.querySelector(".next");
+  const prevBtn = document.querySelector(".prev");
+
+  if (!carousel || !cards.length) return;
+
+  let currentIndex = 0;
+  const total = cards.length;
+  const visible = 2;
+  const gap = 20; 
+
+
+  const firstClones = Array.from(cards).slice(0, visible).map(c => c.cloneNode(true));
+  const lastClones = Array.from(cards).slice(-visible).map(c => c.cloneNode(true));
+  lastClones.forEach(clone => carousel.prepend(clone));
+  firstClones.forEach(clone => carousel.append(clone));
+
+  const allCards = document.querySelectorAll(".carousel .card-tema");
+  const totalSlides = allCards.length;
+
+ 
+  function getCardWidth() {
+    const card = allCards[0];
+    const style = window.getComputedStyle(card);
+    const width = card.offsetWidth;
+    return width + parseInt(style.marginRight || gap);
+  }
+
+  let cardWidth = getCardWidth();
+
+
+  carousel.style.transform = `translateX(-${cardWidth * visible}px)`;
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement("button");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => moveToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+  const dots = dotsContainer.querySelectorAll("button");
+
+  function updateDots() {
+    dots.forEach((dot, idx) =>
+      dot.classList.toggle("active", idx === (currentIndex % total))
+    );
+  }
+
+  function moveToSlide(index) {
+    currentIndex = index;
+    carousel.style.transition = "transform 0.5s ease-in-out";
+    carousel.style.transform = `translateX(-${(index + visible) * cardWidth}px)`;
+    updateDots();
+  }
+
+  function nextSlide() {
+    currentIndex++;
+    carousel.style.transition = "transform 0.5s ease-in-out";
+    carousel.style.transform = `translateX(-${(currentIndex + visible) * cardWidth}px)`;
+
+    if (currentIndex === total) {
+      setTimeout(() => {
+        carousel.style.transition = "none";
+        currentIndex = 0;
+        carousel.style.transform = `translateX(-${cardWidth * visible}px)`;
+      }, 500);
+    }
+
+    updateDots();
+  }
+
+  function prevSlide() {
+    currentIndex--;
+    carousel.style.transition = "transform 0.5s ease-in-out";
+    carousel.style.transform = `translateX(-${(currentIndex + visible) * cardWidth}px)`;
+
+    if (currentIndex < 0) {
+      setTimeout(() => {
+        carousel.style.transition = "none";
+        currentIndex = total - 1;
+        carousel.style.transform = `translateX(-${(currentIndex + visible) * cardWidth}px)`;
+      }, 500);
+    }
+
+    updateDots();
+  }
+
+  if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+  if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+
+
+  window.addEventListener("resize", () => {
+    cardWidth = getCardWidth();
+    carousel.style.transition = "none";
+    carousel.style.transform = `translateX(-${(currentIndex + visible) * cardWidth}px)`;
+  });
+
+  setInterval(nextSlide, 5000);
+});
+  
+
     // Slider
     const slides = document.querySelectorAll('.slide');
     let index = 0;
