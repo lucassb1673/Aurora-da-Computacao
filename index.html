@@ -54,7 +54,11 @@
     <section class="eras mb-5">
       <h1 class="mb-3">ERAS</h1>
       <hr />
-      <img src="./Assets/images/asprimeirasideias(1936–1939).png" alt="As primeiras ideias (1936–1939)" class="img-fluid rounded" />
+      <div class="eras-slider position-relative">
+        <div class="eras-slide active" style="background-image: url('./Assets/images/asprimeirasideias(1936–1939).png');"></div>
+        <div class="eras-slide" style="background-image: url('./Assets/images/A\ ERA\ DA\ EXPANSÃO\ \(1947–1950\).png');"></div>
+        <div class="eras-slide" style="background-image: url('./Assets/images/OS\ PRIMEIROS\ COMPUTADORES\ \ \(1940–1946\)\ \(1\).png')"></div>
+      </div>
     </section>
 
     <!-- Seção Temas -->
@@ -288,6 +292,28 @@ document.addEventListener("DOMContentLoaded", () => {
         header.classList.remove('show');
       }
     });
+    const erasSlides = document.querySelectorAll('.eras-slide');
+let erasIndex = 0;
+
+function changeErasSlide() {
+  erasSlides[erasIndex].classList.remove('active');
+  erasIndex = (erasIndex + 1) % erasSlides.length;
+  erasSlides[erasIndex].classList.add('active');
+}
+
+// Troca de slide a cada 3 segundos
+setInterval(changeErasSlide, 3000);
+// Mini slider ERAS
+const ErasSlides = document.querySelectorAll('.eras-slide');
+let ErasIndex = 0;
+
+function changeErasSlide() {
+  erasSlides[erasIndex].classList.remove('active');
+  erasIndex = (erasIndex + 1) % erasSlides.length;
+  erasSlides[erasIndex].classList.add('active');
+}
+
+setInterval(changeErasSlide, 3000);
   </script>
 
 </body>
