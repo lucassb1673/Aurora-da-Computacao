@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Landing Page</title>
+  <!--Botao de pesdquisa-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
  <!-- Swiper CSS -->
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -20,12 +22,63 @@
 <body>
 
   <!-- Header -->
-  <header class="header">
-    <button class="btn btn-link position-absolute start-0 ms-3 menu" aria-label="Menu">
-      <img src="./Assets/images/logoMenu.svg" alt="Menu" />
-    </button>
-    <img src="./Assets/images/logo.svg" alt="Logo" class="logo" />
-  </header>
+    <header class="header">
+      <button class="btn btn-link position-absolute start-0 ms-3 menu" aria-label="Menu">
+        <img src="./Assets/images/logoMenu.svg" alt="Menu" />
+      </button>
+      <img src="./Assets/images/logo.svg" alt="Logo" class="logo" /> 
+     <!-- Menu lateral -->
+<nav class="side-menu" id="sideMenu">
+  <button class="close-btn" id="closeMenu" aria-label="Fechar menu">×</button>
+
+  <!-- Ícone de idioma -->
+  <div class="lang-icon">
+    <img src="./Assets/images/UK.png" alt="Idioma" />
+  </div>
+
+  <div class="menu-content">
+    <div class="search-box">
+      <input type="text" placeholder="Buscar" />
+      <button><i class="fa fa-search"></i></button>
+    </div>
+
+    <ul class="menu-items">
+      <li><a href="#">INÍCIO</a></li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">EXPLORAR POR TEMAS </a>
+        <div class="submenu-links">
+          <a href="#">FUNDAMENTOS TEÓRICOS E CONCEITUAIS</a>
+          <a href="#">A ERA ELETROMECÂNICA: RELÉS E ENGRENAGENS</a>
+          <a href="#">COMPUTAÇÃO PARA FINS ESPECÍFICOS: GUERRA E CIÊNCIA</a>
+          <a href="#">A REVOLUÇÃO ELETRÔNICA: A ERA DAS VÁLVULA</a>
+          <a href="#">O NASCIMENTO DO SOFTWARE E DO COMPUTADOR MODERNO</a>
+          <a href="#">TECNOLOGIAS, PESSOAS E COMUNIDADE</a>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">EXPLORAR POR ERAS </a>
+        <div class="submenu-links">
+          <a href="#">AS PRIMEIRAS IDEIAS(1936-1939)</a>
+          <a href="#">OS PRIMEIROS COMPUTADORES(1940-1946)</a>
+          <a href="#">A ERA DA EXPANSÃO(1947-1950)</a>
+        </div>
+      </li>
+
+      <li><a href="#">QUIZ</a></li>
+    </ul>
+  </div>
+
+  <footer class="menu-footer">
+    <p>SOBRE NÓS</p>
+  </footer>
+</nav>
+
+<!-- Overlay escuro -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+    </header>
 
   <!-- Jornada com slider -->
   <section class="jornada">
@@ -60,7 +113,7 @@
         <div class="eras-slide" style="background-image: url('./Assets/images/OS\ PRIMEIROS\ COMPUTADORES\ \ \(1940–1946\)\ \(1\).png')"></div>
       </div>
     </section>
-
+    
     <!-- Seção Temas -->
 <section class="temas-section">
   <h1 class="titulo">TEMAS</h1>
@@ -315,6 +368,38 @@ function changeErasSlide() {
 }
 
 setInterval(changeErasSlide, 3000);
+//menu 
+   const menuBtn = document.querySelector('.menu');
+  const sideMenu = document.getElementById('sideMenu');
+  const closeBtn = document.getElementById('closeMenu');
+  const overlay = document.getElementById('menuOverlay');
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  // Abre o menu
+  menuBtn.addEventListener('click', () => {
+    sideMenu.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // bloqueia scroll da página
+  });
+
+  // Fecha o menu
+  const closeMenu = () => {
+    sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  // Dropdowns clicáveis
+  dropdowns.forEach((dropdown) => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+    });
+  });
   </script>
 
 </body>

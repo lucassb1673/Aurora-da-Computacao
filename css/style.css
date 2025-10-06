@@ -3,6 +3,7 @@
   src: url('../Assets/fonts/JosefinSans-SemiBold.ttf');
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -403,5 +404,172 @@ body {
   font-size:51px;
   padding: 60 0;
 }
+/* ================= Menu Lateral ================= */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 360px;
+  height: 100vh;
+  background-color: #141414;
+  color: #fff;
+  z-index: 1101;
+  transition: left 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+.side-menu.active {
+  left: 0;
+}
 
+/* Botão de fechar */
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  top: 0.7rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+/* Ícone de idioma */
+.lang-icon {
+  position: absolute;
+  top: 1.2rem;
+  right: 4.2rem;
+  width: 24px;
+  height: 24px;
+}
+
+.lang-icon img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Conteúdo principal do menu */
+.menu-content {
+  padding: 5rem 1.5rem 2rem;
+  overflow-y: auto;
+}
+
+/* ======= Barra de pesquisa ======= */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 40px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.search-box button {
+  background-color: #e5e5e5;
+  border: none;
+  color: #000;
+  width: 45px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 0 50px 50px 0;
+}
+
+.search-box button:hover {
+  background-color: #d0d0d0;
+}
+
+/* ======= Itens principais ======= */
+.menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-items li {
+  margin-bottom: 1.2rem;
+}
+
+.menu-items a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  display: block;
+}
+
+.menu-items a:hover {
+  color: #bbb;
+}
+
+/* ======= Submenus novos (sem <li>) ======= */
+.submenu-links {
+  display: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.submenu-links a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.dropdown.active .submenu-links {
+  display: flex;
+}
+
+/* Rodapé */
+.menu-footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #333;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .side-menu {
+    width: 100%;
+  }
+}
